@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+**Frontend Setup – XenoCRM**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Follow these steps to set up and run the frontend on your local machine.
 
-## Available Scripts
 
-In the project directory, you can run:
+**Step 1: Clone the Repository**
 
-### `npm start`
+bash
+git clone https://github.com/your-username/xeno_crm.git
+cd xeno_crm/frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+**Step 2: Install Dependencies**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure you have [Node.js](https://nodejs.org/) installed. Then run:
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will install all required packages listed in package.json.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Step 3: Start the React App**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To run the frontend locally:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+bash
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The app will run on: http://localhost:3000
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Folder Structure Overview**
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+frontend/
+├── public/
+├── src/
+│   ├── components/          # All React components
+│   │   ├── Campaign.jsx
+│   │   ├── Customers.jsx
+│   │   ├── ...
+│   ├── CSS/                 # Component-wise CSS files
+│   │   ├── Campaign.css
+│   │   ├── Customers.css
+│   │   ├── ...
+│   ├── context/             # Context API (e.g., Auth)
+│   │   └── AuthContext.js
+│   ├── pages/               # Future modular page routes (currently empty)
+│   ├── services/            # API handling (e.g., Axios instance)
+│   │   └── axios.js
+│   ├── utils/               # General utilities and base files
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── ...
+├── .gitignore
+├── package.json
+├── README.md
+└── yarn.lock / package-lock.json
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Tech Stack Used**
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* React.js – Frontend framework
+* Axios – For API calls
+* Context API – State management (Auth, etc.)
+* CSS Modules – Scoped component styling
+* Recharts – Graphs and data visualization
