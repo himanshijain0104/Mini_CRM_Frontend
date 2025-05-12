@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(3, 168, 244, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 230, 118, 0.05) 0%, transparent 50%);
+  padding: 30px;
+}
+
+.home-container {
+  max-width: 800px;
+  width: 100%;
+  background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00e676, #03a9f4);
+}
+
+.welcome {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.welcome::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 60px;
+  background: #00e676;
+  bottom: -10px;
+  left: 2%;
+  border-radius: 1px;
+  box-shadow: 0 0 8px #00e676;
+}
+
+.homeText {
+  font-size: 18px;
+  color: #e0e0e0;
+  margin: 25px 0;
+  line-height: 1.6;
+}
+
+.dashboard-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.dashboard-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.dashboard-btn:hover {
+  background: rgba(3, 169, 244, 0.15);
+  border-color: rgba(3, 169, 244, 0.5);
+  box-shadow: 0 0 15px rgba(3, 169, 244, 0.3);
+  transform: translateY(-2px);
+}
+
+.dashboard-btn:hover::before {
+  left: 100%;
+}
+
+.dashboard-btn:active {
+  transform: translateY(0);
+}
+
+/* Adding animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(3, 169, 244, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(3, 169, 244, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(3, 169, 244, 0.3);
+  }
+}
+
+@keyframes rocket {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.welcome {
+  animation: fadeIn 0.7s ease forwards;
+}
+
+.homeText {
+  animation: fadeIn 0.7s 0.2s ease forwards;
+  opacity: 0;
+}
+
+.dashboard-btn {
+  animation: fadeIn 0.7s 0.4s ease forwards, glowPulse 2s infinite;
+  opacity: 0;
+}
+
+/* Rocket emoji animation */
+.welcome .rocket {
+  display: inline-block;
+  animation: rocket 2s infinite ease-in-out;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 40px 30px;
+    max-width: 90%;
+  }
+  
+  .welcome {
+    font-size: 28px;
+  }
+  
+  .homeText {
+    font-size: 16px;
+  }
+  
+  .dashboard-btn {
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+}
+
+/* Loading animation for "Loading user data..." */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.homeText:only-child {
+  animation: pulse 1.5s infinite ease-in-out;
+  opacity: 0.8;
+}

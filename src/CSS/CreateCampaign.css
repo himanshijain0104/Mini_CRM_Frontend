@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.create-campaign-container {
+  font-family: 'Montserrat', sans-serif;
+  padding: 25px;
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: #e0e0e0;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: fadeIn 0.4s ease;
+  overflow: auto;
+}
+
+.create-campaign-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.create-campaign-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #00e676, #03a9f4);
+  border-radius: 1px;
+}
+
+.create-campaign-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create-campaign-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #bbbbbb;
+  letter-spacing: 0.5px;
+}
+
+.create-campaign-form input,
+.create-campaign-form select,
+.create-campaign-form textarea {
+  background-color: rgba(15, 15, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 12px 15px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.create-campaign-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.create-campaign-form input:focus,
+.create-campaign-form textarea:focus {
+  outline: none;
+  border-color: #03a9f4;
+  box-shadow: 0 0 0 2px rgba(3, 169, 244, 0.2);
+  background-color: rgba(15, 15, 15, 0.8);
+}
+
+/* Custom focus colors for different fields */
+.create-campaign-form input[name="name"]:focus {
+  border-color: #00e676;
+  box-shadow: 0 0 0 2px rgba(0, 230, 118, 0.2);
+}
+
+.create-campaign-form input[name="segment_id"]:focus {
+  border-color: #03a9f4;
+  box-shadow: 0 0 0 2px rgba(3, 169, 244, 0.2);
+}
+
+.create-campaign-form textarea[name="message_template"]:focus {
+  border-color: #9c27b0;
+  box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.2);
+}
+
+.create-campaign-form input[name="audience_size"]:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.2);
+}
+
+.create-campaign-form input[name="created_by"]:focus {
+  border-color: #f44336;
+  box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2);
+}
+
+.submit-campaign-btn {
+  background: linear-gradient(45deg, #00e676, #03a9f4);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  align-self: flex-end;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.submit-campaign-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.1);
+}
+
+.submit-campaign-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Input number arrows styling */
+.create-campaign-form input[type="number"]::-webkit-inner-spin-button,
+.create-campaign-form input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 30px;
+  filter: invert(1) hue-rotate(180deg) brightness(1.7);
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* Placeholder styling */
+.create-campaign-form input::placeholder,
+.create-campaign-form textarea::placeholder {
+  color: #555555;
+}
+
+/* Error messages */
+.form-error {
+  color: #ff5252;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .create-campaign-container {
+    padding: 20px 15px;
+    margin: 10px;
+    width: auto;
+  }
+  
+  .submit-campaign-btn {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Success message styling */
+.success-message {
+  background-color: rgba(0, 230, 118, 0.1);
+  border-left: 3px solid #00e676;
+  padding: 12px 15px;
+  color: #00e676;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Detailed styling for textarea */
+.create-campaign-form textarea {
+  line-height: 1.6;
+  padding: 15px;
+}
+
+@keyframes borderPulse {
+  0% { box-shadow: 0 0 0 0 rgba(3, 169, 244, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(3, 169, 244, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(3, 169, 244, 0); }
+}
+
+.create-campaign-form input:focus,
+.create-campaign-form textarea:focus {
+  animation: borderPulse 1.5s infinite;
+}

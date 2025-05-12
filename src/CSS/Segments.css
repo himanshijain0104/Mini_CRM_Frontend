@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.segments-container {
+  font-family: 'Montserrat', sans-serif;
+  padding: 25px;
+  background-color: #121212;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: #e0e0e0;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: auto;
+}
+
+.segments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.segments-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.segments-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #00e676, #03a9f4);
+  border-radius: 1px;
+}
+
+.create-segment-button {
+  background: linear-gradient(45deg, #00e676, #03a9f4);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.create-segment-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.1);
+}
+
+.create-segment-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Table styling */
+.segments-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.segments-table thead tr {
+  background: linear-gradient(90deg, rgba(0, 230, 118, 0.1), rgba(3, 169, 244, 0.1));
+  text-align: left;
+}
+
+.segments-table th {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(3, 169, 244, 0.3);
+}
+
+.segments-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.segments-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.segments-table tbody tr:hover {
+  background-color: rgba(3, 169, 244, 0.05);
+  cursor: pointer;
+}
+
+.segments-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Rules column styling - allowing full text display */
+.segments-table td:nth-child(3) {
+  max-width: none;
+  word-wrap: break-word;
+  word-break: normal;
+  white-space: normal;
+  color: #e0e0e0; 
+}
+
+/* Audience size column styling */
+.segments-table td:nth-child(5) {
+  font-weight: 600;
+  color: #00e676;
+}
+
+/* Fancy column styling with subtle gradient hints */
+.segments-table th:nth-child(1),
+.segments-table td:nth-child(1) {
+  border-left: 3px solid transparent;
+}
+
+.segments-table tbody tr:hover td:nth-child(1) {
+  border-left: 3px solid #00e676;
+}
+
+/* Empty state styling */
+.segments-table tbody:empty::after {
+  content: "No segments found";
+  display: block;
+  text-align: center;
+  padding: 30px;
+  color: #777777;
+  font-style: italic;
+}
+
+/* Loading state */
+.segments-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 14px;
+  color: #03a9f4;
+}
+
+/* Animation for new segments when they appear */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.segments-table tbody tr {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Responsive table */
+@media (max-width: 1024px) {
+  .segments-container {
+    padding: 15px;
+    height: 500px; /* Slightly smaller height on medium screens */
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .segments-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .segments-container {
+    height: 450px; /* Even smaller height on small screens */
+  }
+  
+  .segments-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .create-segment-button {
+    width: 100%;
+  }
+  
+  .segments-table th,
+  .segments-table td {
+    padding: 10px;
+  }
+  
+  .segments-table td:nth-child(3) {
+    max-width: 150px;
+  }
+}
+
+/* Scrollbar styling */
+.segments-container::-webkit-scrollbar{
+  width: 6px;
+  }
+  
+  .segments-container::-webkit-scrollbar-track{
+     background: rgba(30,30,30,0.5);
+     border-radius: 10px;
+  }
+  
+  .segments-container::-webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom, #00e676, #03a9f4);
+    border-radius: 10px;
+  }
+  
+  .segments-container::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(to bottom, #00e676, #03a9f4);
+    filter: brightness(1.2);
+  }

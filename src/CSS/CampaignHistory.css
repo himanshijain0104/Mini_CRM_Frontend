@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.campaign-history-container {
+  background-color: rgba(30, 30, 30, 0.5);
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: all 0.3s ease;
+  animation: campaignHistoryFadeIn 0.5s ease forwards;
+  border-left: 3px solid #00e676;
+}
+
+.campaign-history-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 230, 118, 0.2);
+}
+
+.campaign-history-container h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+/* Table styles */
+.campaign-history-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 10px;
+  color: #e0e0e0;
+}
+
+.campaign-history-table thead {
+  background-color: rgba(15, 15, 15, 0.7);
+}
+
+.campaign-history-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.campaign-history-table th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.campaign-history-table th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.campaign-history-table tbody tr {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.campaign-history-table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.campaign-history-table tbody tr:hover {
+  background-color: rgba(0, 230, 118, 0.07);
+}
+
+.campaign-history-table td {
+  padding: 12px 15px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* Success and failure count styles */
+.campaign-history-table td:nth-child(3) {
+  color: #00e676; /* Success count in green */
+}
+
+.campaign-history-table td:nth-child(4) {
+  color: #ff5252; /* Failure count in red */
+}
+
+/* Empty state */
+.campaign-history-table tr td[colspan="4"] {
+  text-align: center;
+  padding: 40px 0;
+  color: #888888;
+  font-style: italic;
+}
+
+/* Loading animation */
+@keyframes campaignHistoryPulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.campaign-history-loading {
+  font-size: 18px;
+  text-align: center;
+  padding: 40px;
+  animation: campaignHistoryPulse 1.5s infinite ease-in-out;
+  color: #00e676;
+}
+
+/* Animation for fading in */
+@keyframes campaignHistoryFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .campaign-history-table {
+    min-width: 900px;
+  }
+  
+  .campaign-history-container {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .campaign-history-table {
+    font-size: 14px;
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .campaign-history-container {
+    padding: 20px 15px;
+  }
+  
+  .campaign-history-table th,
+  .campaign-history-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
