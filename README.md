@@ -36,34 +36,6 @@ npm start
 The app will run on: http://localhost:3000
 
 
-**Folder Structure Overview**
-
-
-frontend/
-├── public/
-├── src/
-│   ├── components/          # All React components
-│   │   ├── Campaign.jsx
-│   │   ├── Customers.jsx
-│   │   ├── ...
-│   ├── CSS/                 # Component-wise CSS files
-│   │   ├── Campaign.css
-│   │   ├── Customers.css
-│   │   ├── ...
-│   ├── context/             # Context API (e.g., Auth)
-│   │   └── AuthContext.js
-│   ├── pages/               # Future modular page routes (currently empty)
-│   ├── services/            # API handling (e.g., Axios instance)
-│   │   └── axios.js
-│   ├── utils/               # General utilities and base files
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── ...
-├── .gitignore
-├── package.json
-├── README.md
-└── yarn.lock / package-lock.json
-
 
 **Tech Stack Used**
 
