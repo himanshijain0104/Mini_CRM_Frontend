@@ -1,4 +1,4 @@
-**Frontend Setup – XenoCRM**
+**Frontend Setup – Mini CRM**
 
 Follow these steps to set up and run the frontend on your local machine.
 
